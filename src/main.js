@@ -3,8 +3,8 @@ const loadImage = (path) => {
     return new Promise((resolve, reject) => {
         const img = new Image(path);
         img.onload = () => resolve({ 
-            w: img.width,
-            h: img.height
+            w: img.naturalWidth,
+            h: img.naturalHeight
         });
         img.onerror = reject;
         img.src = path;
